@@ -203,5 +203,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //save data after close activity 
+    //save data after close activity
 }
