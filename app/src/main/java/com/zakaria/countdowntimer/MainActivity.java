@@ -16,7 +16,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static  final  long START_TIME_IN_MILLITS = 60000;
+    private static  final  long START_TIME_IN_MILLITS = 1800000;
 
     private TextView mTextViewTimeDownCounter;
     private Button mStartBtn;
@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLITS;
     private  long endTime;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    //star and pause method
+    //start and pause method
     private void startTimer() {
         endTime = System.currentTimeMillis() + mTimeLeftInMillis;
 
@@ -110,26 +112,27 @@ public class MainActivity extends AppCompatActivity {
         String timeLeftFormated = String.format(Locale.getDefault(), "%02d:%02d", minuites, second);
         mTextViewTimeDownCounter.setText(timeLeftFormated);
 
+
     }
 
     private  void updateButtons(){
-        if(mTimerRunning){
-            mResetBtn.setVisibility(View.INVISIBLE);
-            mStartBtn.setText("Pause");
-        }
-        else {
-            mStartBtn.setText("Start");
-            if(mTimeLeftInMillis < 1000){
-                mStartBtn.setVisibility(View.INVISIBLE);
-            }else {
-                mStartBtn.setVisibility(View.VISIBLE);
-            }
-            if(mTimeLeftInMillis < START_TIME_IN_MILLITS){
-                mResetBtn.setVisibility(View.VISIBLE);
-            }else {
-                mResetBtn.setVisibility(View.INVISIBLE);
-            }
-        }
+//        if(mTimerRunning){
+//            mResetBtn.setVisibility(View.INVISIBLE);
+//            mStartBtn.setText("Pause");
+//        }
+//        else {
+//            mStartBtn.setText("Start");
+//            if(mTimeLeftInMillis < 1000){
+//                mStartBtn.setVisibility(View.INVISIBLE);
+//            }else {
+//                mStartBtn.setVisibility(View.VISIBLE);
+//            }
+//            if(mTimeLeftInMillis < START_TIME_IN_MILLITS){
+//                mResetBtn.setVisibility(View.VISIBLE);
+//            }else {
+//                mResetBtn.setVisibility(View.INVISIBLE);
+//            }
+//        }
     }
 
 
